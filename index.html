@@ -1,55 +1,69 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>📈 Stock Dashboard</h1>
+<body class="bg-gray-100 text-gray-800 p-6">
+    <header class="bg-blue-500 text-white p-4 rounded-md text-center">
+        <h1 class="text-2xl font-semibold">📈 Stock Dashboard</h1>
     </header>
-    <main>
-        <section class="select-section">
-            <h2>Choose a Stock</h2>
-            <div class="select-wrapper">
-                <select id="stockSelector">
+
+    <main class="max-w-5xl mx-auto mt-8 space-y-6">
+        <!-- Select Section -->
+        <section class="bg-white p-6 rounded-md shadow">
+            <h2 class="text-xl font-medium mb-4">Choose a Stock</h2>
+            <div class="flex items-center gap-4">
+                <select id="stockSelector" class="w-2/3 p-2 border border-blue-500 rounded-md bg-blue-50 focus:outline-none">
                     <option value="" disabled selected>Pick a stock</option>
                 </select>
-                <button id="stockLoadBtn" class="btn-main">View Stock</button>
+                <button id="stockLoadBtn" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">View Stock</button>
             </div>
         </section>
 
-        <section class="query-section">
-            <input type="text" id="stockInput" placeholder="Enter stock (e.g., TSLA)">
-            <button id="searchBtn" class="btn-main">Find</button>
+        <!-- Query Section -->
+        <section class="bg-white p-6 rounded-md shadow">
+            <div class="flex items-center gap-4">
+                <input type="text" id="stockInput" placeholder="Enter stock (e.g., TSLA)" class="w-2/3 p-2 border border-blue-500 rounded-md focus:outline-none">
+                <button id="searchBtn" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Find</button>
+            </div>
         </section>
 
-        <section class="details-section">
-            <h2>Stock Details</h2>
-            <div id="detailsCard" class="info-card"></div>
+        <!-- Details Section -->
+        <section class="bg-white p-6 rounded-md shadow">
+            <h2 class="text-xl font-medium mb-4">Stock Details</h2>
+            <div id="detailsCard" class="bg-blue-50 p-4 rounded-md text-center shadow"></div>
         </section>
 
-        <section class="chart-section">
-            <h2>Price Chart</h2>
-            <div class="chart-wrapper">
+        <!-- Chart Section -->
+        <section class="bg-white p-6 rounded-md shadow">
+            <h2 class="text-xl font-medium mb-4">Price Chart</h2>
+            <div class="relative h-96">
                 <canvas id="priceChart"></canvas>
             </div>
         </section>
 
-        <section class="compare-section">
-            <h2>Stock Comparisons</h2>
-            <table id="comparisonTable">
+        <!-- Compare Section -->
+        <section class="bg-white p-6 rounded-md shadow">
+            <h2 class="text-xl font-medium mb-4">Stock Comparisons</h2>
+            <table id="comparisonTable" class="w-full border-collapse text-left">
                 <thead>
-                    <tr>
-                        <th>Symbol</th>
-                        <th>Last Price</th>
-                        <th>Daily Change</th>
-                        <th>Volume</th>
+                    <tr class="bg-blue-500 text-white">
+                        <th class="p-3">Symbol</th>
+                        <th class="p-3">Last Price</th>
+                        <th class="p-3">Daily Change</th>
+                        <th class="p-3">Volume</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="divide-y divide-gray-300">
                 </tbody>
             </table>
         </section>
@@ -59,67 +73,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Tracker Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>📊 Stock Tracker Dashboard</h1>
-    </header>
-    <main>
-        <section class="dropdown-section">
-            <h2>Select Trending Stock</h2>
-            <div class="dropdown-container">
-                <select id="stockDropdown">
-                    <option value="" disabled selected>Select a stock</option>
-                </select>
-                <button id="loadStockButton" class="primary-button">Load Stock</button>
-            </div>
-        </section>
-
-        <section class="search-section">
-            <input type="text" id="stockSearch" placeholder="Search for a stock (e.g., AAPL)">
-            <button id="searchButton" class="primary-button">Search</button>
-        </section>
-
-        <section class="stock-info">
-            <h2>Stock Information</h2>
-            <div id="stockDetails" class="card"></div>
-        </section>
-
-        <section class="graph-section">
-            <h2>Stock Price Graph</h2>
-            <div class="chart-container">
-                <canvas id="stockChart"></canvas>
-            </div>
-        </section>
-
-        <section class="stock-table">
-            <h2>Compare Stocks</h2>
-            <table id="stockTable">
-                <thead>
-                    <tr>
-                        <th>Stock</th>
-                        <th>Price</th>
-                        <th>Change</th>
-                        <th>Volume</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </section>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
-</body>
-</html> -->
