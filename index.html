@@ -44,15 +44,41 @@
         </section>
 
         <!-- Chart Section -->
-        <section class="bg-white p-6 rounded-md shadow">
+<!--         <section class="bg-white p-6 rounded-md shadow">
             <h2 class="text-xl font-medium mb-4">Price Chart</h2>
             <div class="relative h-96">
                 <canvas id="priceChart"></canvas>
             </div>
-        </section>
+        </section> -->
+        <section class="bg-white p-6 sm:p-4 xs:p-2 rounded-md shadow">
+    <h2 class="text-xl sm:text-lg xs:text-base font-medium mb-4">Price Chart</h2>
+    <div class="relative h-96 sm:h-80 xs:h-64 overflow-auto">
+        <canvas id="priceChart"></canvas>
+    </div>
+</section>
+
 
         <!-- Compare Section -->
-        <section class="bg-white p-6 rounded-md shadow">
+        <section class="bg-white p-6 sm:p-4 xs:p-2 rounded-md shadow">
+    <h2 class="text-xl sm:text-lg xs:text-base font-medium mb-4">Stock Comparisons</h2>
+    <div class="overflow-x-auto">
+        <table id="comparisonTable" class="w-full border-collapse text-left text-sm sm:text-xs">
+            <thead>
+                <tr class="bg-purple-500 text-white">
+                    <th class="p-3 sm:p-2">Symbol</th>
+                    <th class="p-3 sm:p-2">Last Price</th>
+                    <th class="p-3 sm:p-2">Daily Change</th>
+                    <th class="p-3 sm:p-2">Volume</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-300">
+                <!-- Dynamic rows -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!--         <section class="bg-white p-6 rounded-md shadow">
             <h2 class="text-xl font-medium mb-4">Stock Comparisons</h2>
             <table id="comparisonTable" class="w-full border-collapse text-left">
                 <thead>
@@ -66,7 +92,7 @@
                 <tbody class="divide-y divide-gray-300">
                 </tbody>
             </table>
-        </section>
+        </section> -->
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
