@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📈 Stock Dashboard</h1>
+    </header>
+    <main>
+        <section class="select-section">
+            <h2>Choose a Stock</h2>
+            <div class="select-wrapper">
+                <select id="stockSelector">
+                    <option value="" disabled selected>Pick a stock</option>
+                </select>
+                <button id="stockLoadBtn" class="btn-main">View Stock</button>
+            </div>
+        </section>
+
+        <section class="query-section">
+            <input type="text" id="stockInput" placeholder="Enter stock (e.g., TSLA)">
+            <button id="searchBtn" class="btn-main">Find</button>
+        </section>
+
+        <section class="details-section">
+            <h2>Stock Details</h2>
+            <div id="detailsCard" class="info-card"></div>
+        </section>
+
+        <section class="chart-section">
+            <h2>Price Chart</h2>
+            <div class="chart-wrapper">
+                <canvas id="priceChart"></canvas>
+            </div>
+        </section>
+
+        <section class="compare-section">
+            <h2>Stock Comparisons</h2>
+            <table id="comparisonTable">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Last Price</th>
+                        <th>Daily Change</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Tracker Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📊 Stock Tracker Dashboard</h1>
+    </header>
+    <main>
+        <section class="dropdown-section">
+            <h2>Select Trending Stock</h2>
+            <div class="dropdown-container">
+                <select id="stockDropdown">
+                    <option value="" disabled selected>Select a stock</option>
+                </select>
+                <button id="loadStockButton" class="primary-button">Load Stock</button>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <input type="text" id="stockSearch" placeholder="Search for a stock (e.g., AAPL)">
+            <button id="searchButton" class="primary-button">Search</button>
+        </section>
+
+        <section class="stock-info">
+            <h2>Stock Information</h2>
+            <div id="stockDetails" class="card"></div>
+        </section>
+
+        <section class="graph-section">
+            <h2>Stock Price Graph</h2>
+            <div class="chart-container">
+                <canvas id="stockChart"></canvas>
+            </div>
+        </section>
+
+        <section class="stock-table">
+            <h2>Compare Stocks</h2>
+            <table id="stockTable">
+                <thead>
+                    <tr>
+                        <th>Stock</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> -->
